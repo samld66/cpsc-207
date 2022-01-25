@@ -1,0 +1,45 @@
+filename=$1;
+sex=$2;
+
+if test -e $filename;
+then
+echo "valid file"
+else
+echo "invalid file"
+exit 1
+fi
+if test $sex = "M" ||  test $sex = "F" ||  test $sex = "NR";
+then
+echo "valid gender"
+else
+echo "invalid gender"
+fi
+while IFS="," read -r oid fname lname email gpa gender
+do
+echo $oid
+if [[ $sex = "$gender" ]]
+then
+echo $oid, $fname, $lname, $gpa $gender
+fi
+done < student_score.csv
+count=0
+totalgpa=0
+while IFS="," read -r oid fname lname email gpa gender
+do
+if [[ $sex = "$gender" ]]
+then
+let count=$((count+1))
+totalgpa=$(echo $totalgpa + $gpa | bc )
+ fi
+done < student_score.csv
+echo "total gender:$count"
+echo "total gpa:$totalgpa"
+
+average=$(echo $totalgpa / $count | bc )
+echo "average GPA for $sex is: $average"
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+"catstd.sha" 40L, 730C                                        40,2          All

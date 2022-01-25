@@ -1,0 +1,22 @@
+
+#task-1
+filename="mytext.txt"
+msg="A quick brown dog tried to jump over a lazy fox. the dog fell over the lazy fox!"
+if [[ -s $filename ]]
+then
+        #display the content of the file
+        cat $filename
+else
+        #create a file
+        touch $filename
+        echo $msg >> $filename
+        cat $filename
+
+fi
+
+#task-2
+declare -A wordcount
+
+#task-3
+for
+"wordc

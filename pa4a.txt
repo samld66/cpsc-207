@@ -1,0 +1,24 @@
+#!/bin/bash 
+Samantha Duffy
+fname=ab
+#array of file extensions.
+FILEN=("" ".txt" ".csv" ".png" ".docx" ".doc" ".c" ".cpp")
+#loops 3 times to get 3 of each file.
+for i in {1..3}
+do
+        #loops through Array.
+for i in ${FILEN[*]};
+do
+  for ((n=1; n<=1; n++))
+  do
+           echo "$i";
+#generates random 4 character file name value of the var $fname.
+          for i in {1..4}; do
+                          echo -n  "${fname:RANDOM%${#fname}:1}"
+                  done;
+done;
+done;
+done
+
+~                                                                               
+~       

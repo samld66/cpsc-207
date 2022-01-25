@@ -1,0 +1,18 @@
+chars=abcd
+count=3
+
+#for loop to loop file times.
+for i in $(seq $count)
+do
+#for loop to generate random file name that has 4 characters from a-d.   
+for i in {1..4}; do
+    echo -n "${chars:RANDOM%${#chars}:1}"
+
+done
+echo
+#echos array         
+for i in "${FILEN[*]}"
+do
+        echo "$i"
+done
+done

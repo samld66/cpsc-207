@@ -1,0 +1,10 @@
+#!/bin/bash 
+#Samantha Duffy
+#finds all files and uses sort -u to find unique extensions.
+#awk -F. separates filename from extension at the period.
+
+find . -type f | awk -F. '{print $NF}' | sort -u
+
+#couldnt figure out how to add files to directory from part 1.
+#so i manually added them to demonsrate part2.
+~                                                     
